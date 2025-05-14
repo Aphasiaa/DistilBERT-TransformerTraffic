@@ -1,0 +1,40 @@
+# 基础依赖
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# 深度学习相关
+torch>=2.0.0
+transformers>=4.30.0
+
+# 机器学习相关
+scikit-learn>=1.2.0
+
+# 数据可视化
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# 网络数据包处理
+scapy>=2.5.0
+
+# 其他工具与依赖
+tqdm>=4.65.0  # 用于显示进度条 
+
+
+# project-structure（项目结构）
+TransformerTraffic/
+├── data/                          # 数据目录
+│   ├── raw/                      # 保存原始PCAP文件的文件夹
+│   ├── split/                     # 保存分割后的16个PCAP文件的文件夹
+│   ├── processed_data.csv        				# 处理后的完整数据
+│   ├── processed_segment1_data.csv 			# 处理后的segment1数据（实际用于实验训练的数据）
+│   └── segment_1.pcap            	# 第一个数据片段（取自split文件夹，后续在实际实验复现时用于预处理生成processed_segment1_data.csv文件）
+├── outputs/                      		# 输出目录
+│   ├── model/                   		# 保存的模型文件
+│   └── test_results/            	# 测试结果和可视化图表
+├── scripts/                     # 代码文件
+│   ├── split_pcap.py           	# PCAP文件分割脚本
+│   ├── preprocess.py           	# 数据预处理脚本
+│   ├── train.py                # 模型训练脚本
+│   └── test.py                 # 模型测试脚本
+└── requirements.txt            # 项目依赖文件
